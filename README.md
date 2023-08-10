@@ -36,3 +36,17 @@
 
 - Para adicionar arquivos dinâmicos no html, utilizamos `{{variavel}}` e passar por parâmetro `render_template('arquivo.html', variavel='valor')` 
 - Parar criar uma estrutura de repetição dentro do arquivo html utiliza-se `{% for jogo in jogos %} bloco_de_repeticao {% endfor %}`
+  - O `Jinja2` é o motor que renderiza o template no Flask
+     
+      - `upper`: colocar os caracteres em caixa alta;
+      - `round`: arredondar números;
+      - `trim`: remover espaços do início e do fim do texto;
+      - `default('texto exibido por padrão')` - quando queremos mostrar algo, caso a variável esteja vazia ou nula.
+        
+     <br>
+    
+      - Tipos de Delimitadores do Jinja2:
+
+      - `{%....%}`: usado para inserir estruturas Python dentro de um arquivo html;
+      - `{{....}}`: usado para facilitar a exibição de código python como um output em um template HTML. Alternativa: {% print(....) %};
+      - `{#....#}`: usado para adicionar comentários que não serão exibidos no output do template HTML.
