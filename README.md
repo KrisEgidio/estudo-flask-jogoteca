@@ -50,3 +50,10 @@
       - `{%....%}`: usado para inserir estruturas Python dentro de um arquivo html;
       - `{{....}}`: usado para facilitar a exibição de código python como um output em um template HTML. Alternativa: {% print(....) %};
       - `{#....#}`: usado para adicionar comentários que não serão exibidos no output do template HTML.
+  
+
+### 03. Criação de um novo jogo
+
+- Usar o debug para não precisar reiniciar o servidor em toda alteração `@app.run(debuh=True)`
+- Atribuir em uma rota o métodos com `@app.route('/nome-da-rota', methods=['POST',])`
+- Importar e utilizar o helper do flask `request` para receber as informações enviadas do formulário
