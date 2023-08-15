@@ -57,3 +57,10 @@
 - Usar o debug para não precisar reiniciar o servidor em toda alteração `@app.run(debuh=True)`
 - Atribuir em uma rota o métodos com `@app.route('/nome-da-rota', methods=['POST',])`
 - Importar e utilizar o helper do flask `request` para receber as informações enviadas do formulário
+
+### 04. Melhorando o código e a usabilidade
+
+- O helper `redirect` serve para redirecionar a página para outra rota
+- A pasta `static` serve para guardar os arquivos css. Use a diretiva `url_for` para indicar o caminho do arquivo e criar uma url dinâmica
+- Para melhorar o código, é possível utilizar templates e estender para outras páginas para não repetir código
+  - Utilize as diretivas como as de exemplo `{% block conteudo %}{% endblock %}` e para estender um template `{% extends "template.html" %}`
