@@ -75,3 +75,17 @@
 - Mensagens `flash`são ótimas para informar usuário sobre solicitações realizadas na aplicação
   - Importar o helper `flash`
   - Para criar a mensagem flash `flash('Logout efetuado com sucesso!')`
+  - Para exibir a mensagem flash no html:
+  
+
+  ````python
+  {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul id="messages" class="list-unstyled">
+                {% for message in messages %}
+                    <li class="alert alert-success">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+  ````
