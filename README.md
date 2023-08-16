@@ -64,3 +64,14 @@
 - A pasta `static` serve para guardar os arquivos css. Use a diretiva `url_for` para indicar o caminho do arquivo e criar uma url dinâmica
 - Para melhorar o código, é possível utilizar templates e estender para outras páginas para não repetir código
   - Utilize as diretivas como as de exemplo `{% block conteudo %}{% endblock %}` e para estender um template `{% extends "template.html" %}`
+
+### 05. Autenticando usuários com sessão do Flask
+
+- O flask utiliza os `cookies` para armezar dados no client-side e para salvar os dados da sessão, necessário criar uma `secret_key` para criptografia desses dados
+  - Importar o helper `session`
+  - A `secret_key` deve ser inserida após a instância de criação do flash `app.secret_key = 'alura'`
+  - Para salvar dados da sessão utilizar `session['usuario_logado'] = request.form['usuario']`
+  - Parar remover dados da sessão `session['usuario_logado'] = None`
+- Mensagens `flash`são ótimas para informar usuário sobre solicitações realizadas na aplicação
+  - Importar o helper `flash`
+  - Para criar a mensagem flash `flash('Logout efetuado com sucesso!')`
