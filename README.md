@@ -89,3 +89,8 @@
             {% endif %}
         {% endwith %}
   ````
+
+### Implementando autorização para criar Jogos
+
+- Para obter as querys strings da url deve-se utilizar `request.args.get('key')` 
+- Boas práticas com url é utilizar elas de forma dinâmica com `url_for('nome_do_metodo')`
