@@ -8,7 +8,7 @@
 | 🏷️ | Tecnologias | 	Python, Flask, PyCharm                                |
 | 🚀  | URL         | 	#                                                     |
 | 🤿  | Desafio     | 	Criar uma aplicação com listagem de jogo, a jogoteca. |
-| 🏅  | Curso       | 	Alura - Flask: crie uma webapp com Python             |
+| 🏅  | Formação    | 	Alura - Começando com Flask: framework web de Python  |
 
 <br>
 
@@ -90,7 +90,43 @@
         {% endwith %}
   ````
 
-### Implementando autorização para criar Jogos
+### 06. Implementando autorização para criar Jogos
 
 - Para obter as querys strings da url deve-se utilizar `request.args.get('key')` 
 - Boas práticas com url é utilizar elas de forma dinâmica com `url_for('nome_do_metodo')`
+
+
+### 07. Persistência com MySQL
+
+- Instalar o mysql com `pip3.exe install mysqlclient`
+- Instalar o mysql conector para rodar o script para criar o banco de dados e suas tabelas `pip install mysql-connector-python==8.0.28`
+- Utilizar o ORM `SQLALchemy` e instalar `pip install flask-sqlalchemy==2.5.1`
+- Instanciar o banco de dados com `db = SQLAlchemy(app)` (não esqueça de importar a biblioteca)
+- Conectar o banco de dados
+
+```python
+app.config['SQLALCHEMY_DATABASE_URI'] = \
+    '{SGBD}://{usuario}:{senha}@{servidor}/{database}?collation=utf8mb4_general_ci'.format(
+        SGBD = 'mysql+mysqlconnector',
+        usuario = 'root',
+        senha = 'admin',
+        servidor = 'localhost',
+        database = 'jogoteca'
+    )
+```
+
+- Criar classes para se comunicar com as tabelas do banco de dados
+
+````pyhton
+class Jogos(db.Model)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    nome = db.Column(db.String(50), nullable=False)
+    categoria = db.Column(db.String(40), nullable=False)
+    console = db.Column(db.String(20), nullable=False)
+
+    def __repr__(self):
+        return '<Name %r>' % self.name
+````
+
+- Ambos os métodos internos __str__ e __repr__ são muito utilizados para a construção de classes na linguagem Python. Enquanto o __str__ tem como foco o usuário final daquela classe, o método __repr__ tem como objetivo mostrar uma versão em string para a pessoa programadora quando a classe é acessada em modo interativo.
+- Para realizar querys `Jogos.query.order_by(Jogos.id)`
