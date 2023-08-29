@@ -130,3 +130,16 @@ class Jogos(db.Model)
 
 - Ambos os métodos internos __str__ e __repr__ são muito utilizados para a construção de classes na linguagem Python. Enquanto o __str__ tem como foco o usuário final daquela classe, o método __repr__ tem como objetivo mostrar uma versão em string para a pessoa programadora quando a classe é acessada em modo interativo.
 - Para realizar querys `Jogos.query.order_by(Jogos.id)`
+
+
+### 08. Completanto CRUD
+
+- Reestruturando o código, aprendemos a organizar melhor. Abaixo estão como os arquivos devem ser separados
+
+```python 
+|__templates  #destinado os arquivos htmls
+|__config.py #arquivo com os dados de configuração da aplicação ou banco de dados
+|__jogoteca.py #arquivo principal que instacia o app
+|__models.py #todos as classes que são destinadas a comunicar-se com banco de dados
+|__views.py #arquivos com todas as rotas
+```
