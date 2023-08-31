@@ -143,3 +143,8 @@ class Jogos(db.Model)
 |__models.py #todos as classes que são destinadas a comunicar-se com banco de dados
 |__views.py #arquivos com todas as rotas
 ```
+- Para criar e atualizar dados do banco você pode utilizar os models. 
+  - Você pode criar uma query para obter dados `Jogos.query.filter_by(id=request.form['id']).first()`.
+  - Para criar um novo item `Jogos(nome=nome, categoria=categoria, console=console)`
+  - Para salvar no banco de dados utilize `db.session.add(novo_jogo)` e em seguida `db.session.commit()`
+  - Para deletar `jogo = Jogos.query.filter_by(id=id).delete()`
