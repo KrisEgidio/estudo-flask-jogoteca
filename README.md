@@ -148,3 +148,10 @@ class Jogos(db.Model)
   - Para criar um novo item `Jogos(nome=nome, categoria=categoria, console=console)`
   - Para salvar no banco de dados utilize `db.session.add(novo_jogo)` e em seguida `db.session.commit()`
   - Para deletar `jogo = Jogos.query.filter_by(id=id).delete()`
+
+
+### 09. Implementando imagens
+
+- Para fazer upload de uma imagem é simples, você precisa criar um diretório para salvar os arquivos `upload_path = app.config['UPLOAD_PATH']`
+- No config.py você precisa criar uma variável assim `UPLOAD_PATH = os.path.dirname(os.path.abspath(__file__)) + '/uploads'`
+- Utilizar o `arquivo = request.files['arquivo']` para receber o arquivo e `arquivo.save(f'{upload_path}/capa{novo_jogo.id}.jpg')` salvar o arquivo no diretório
