@@ -155,3 +155,10 @@ class Jogos(db.Model)
 - Para fazer upload de uma imagem é simples, você precisa criar um diretório para salvar os arquivos `upload_path = app.config['UPLOAD_PATH']`
 - No config.py você precisa criar uma variável assim `UPLOAD_PATH = os.path.dirname(os.path.abspath(__file__)) + '/uploads'`
 - Utilizar o `arquivo = request.files['arquivo']` para receber o arquivo e `arquivo.save(f'{upload_path}/capa{novo_jogo.id}.jpg')` salvar o arquivo no diretório
+
+### 10. Aprimorando as capas de jogos
+
+- Adicionar arquivos js (incluindo bibliotecas) devem ser na pasta `static`
+- Adicionar também as bibliotecas no static, como o `jquery`
+- Adicionar a tag script no template.html
+- Arquivo `helpers.js` é destinado a funções que podem ser utilizadas pelas rotas
